@@ -1,0 +1,10 @@
+body {
+    background-image: url("assets/images/monsters6.jpg");
+}
+
+.box {
+    background-color: green;
+    opacity: 0.8;
+    
+}
+
