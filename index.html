@@ -6,8 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Classic Movie Monsters Trivia Game</title>
 
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+   <link href="https://fonts.googleapis.com/css?family=Sigmar+One" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
 </head>
     
 
@@ -16,9 +21,65 @@
 
 
 </header>
-
     <div class="wrapper">
-        <div class="box">
+        <div class="header">
+            <div id="header-container">
+                <p id="quiz-header">Classic Movie Monster Trivia Game</p>
+            </div>
+        </div>
+
+        <div id="startgame">
+            <div id="startBtn">
+                <h2>Start</h2>
+            </div>
+
+        </div>
+
+        <div id="quizbox" style="display:none;">
+
+            <div class="counter">
+                <h2>Time Remaining: </h2><div id="minsSeconds">0</div>
+            </div>
+            <form id="quizForm">
+                <label for="borisKarloff" id="theBoris">In what year did Boris Karloff play The Mummy?</label><br>
+                <form action="">
+                    <input type="radio" name="boris" value="1928"> a) 1928
+                    <input type="radio" name="boris" value="1932"> b) 1932
+                    <input type="radio" name="boris" value="1936"> c) 1936 
+                    <input type="radio" name="boris" value="1940"> d) 1940
+                </form><br>
+
+                <label for="nosferatu" id="theNos">What type of monster is Nosferatu?</label><br>
+                <form action="">
+                    <input type="radio" name="nos" value="vampire"> a) vampire
+                    <input type="radio" name="nos" value="zombie"> b) zombie
+                    <input type="radio" name="nos" value="ghost"> c) ghost
+                    <input type="radio" name="nos" value="somnabulist"> d) somnabulist
+                </form><br>
+
+                <label for="dracula" id="theDrac">In 1931, which actor played Dracula?</label><br>
+                <form action="">
+                    <input type="radio" name="drac" value="lonChaney"> a) Lon Chaney Jr.
+                    <input type="radio" name="drac" value="vincentPrice"> b) Vincent Price
+                    <input type="radio" name="drac" value="jamesArness"> c) James Arness
+                    <input type="radio" name="drac" value="belaLugosi"> d) Bela Lugosi
+                </form><br>
+
+                <label for="brideof" id="theBride">In "The Bride of Frakenstein," who played both the bride and Mary Shelley?</label><br>
+                <form action="">
+                    <input type="radio" name="bride" value="maeClarke"> a) Mae Clarke
+                    <input type="radio" name="bride" value="margaretSheridan"> b) Margaret Sheridan
+                    <input type="radio" name="bride" value="julieAdams"> c) Julie Adams 
+                    <input type="radio" name="bride" value="valerieDobson"> d) Valerie Dobson
+                </form><br>
+
+                <input type="submit" id="submitBtn" value="Submit">
+
+            </form>
+               
+        </div>
+
+        <div id="answerscorrect" style="display: none;">
 
         </div>
 
@@ -26,6 +87,8 @@
 
     </div>
 
+<script type="text/javascript" src="assets/javascript/app.js">
+</script> 
     
 </body>
 </html>
