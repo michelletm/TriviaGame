@@ -20,56 +20,79 @@ function startGame () {
     var answerArray = [];
 
     var questions = {
+
+
         
-        theBoris: {
+        q1: {
             answerChoices: ["q1a1", "q1a2", "q1a3", "q1a4"],
             correctAnswer: "q1a2"
         },
 
-        theNos: {
+        q2: {
             answerChoices: ["q2a1", "q2a2", "q2a3", "q2a4"],
             correctAnswer: "q2a1"
         },
 
-        theDrac: {
+        q3: {
             answerChoices: ["q3a1", "q3a2", "q3a3", "q3a4"],
             correctAnswer: "q3a4"
         },
 
-        theBride: {
+        q4: {
             answerChoices: ["q4a1", "q4a2", "q4a3", "q4a4"],
             correctAnswer: "q4a4"
         }
         
     };
 
-    var userChoice = [questions.theBoris.answerChoices[""], questions.theNos.answerChoices[""], questions.theDrac.answerChoices[""], questions.theBride.answerChoices[""]];
+    var userChoice = [questions.q1.answerChoices[""], questions.q2.answerChoices[""], questions.q3.answerChoices[""], questions.q4.answerChoices[""]];
     
     //let x = answerInput;
     //["q1a1", "q1a2", "q1a3", "q1a4", "q2a1", "q2a2", "q2a3", "q2a4", "q3a1", "q3a2", "q3a3", "q3a4", "q4a1", "q4a2", "q4a3" , "q4a4"];
 
-    let answerInput = userChoice;
+    var correctAnswers = ["q1a2", "q2a1", "q3a4", "q4a4"];
+
+
+    function findCorrect () {
+        for(let i=0; i<answerArray.length, i++;) {
+            for(let j=0; j<correctAnswers.length, j++;) {
+                if(answerArray[i] === correctAnswers[i]) {
+                    answerscorrect++;
+                }
+
+                else {
+                    answersmissed++;
+                }
+                
+                $("#quizbox").hide();
+       
+                $("#answerscorrect").show();
+                   
+       
+            
+
+
+            }
+        }
+    }
 
 
     
-
-
-    //var countdown = 
-    
-    //var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     $("#startgame").hide();
     $("#quizbox").show();
-    //$("#minsSeconds").text("seconds");
+    
 
         var counter = 61;
             var x = setInterval(function () {
 
-            counter = counter-1;
-            $('#timer').html(counter);
+                counter = counter-1;
+                $('#timer').html(counter);
 
-            if(x === 0) {
-                $("#answerscorrect").show();
-            }
+                if(counter === 0) {
+                    clearInterval();
+                    $("#quizbox").hide();
+                    $("#answerscorrect").show();
+                }
 
             },1000);
             
@@ -79,39 +102,40 @@ function startGame () {
 
     $(".option").on("click", function(event) {
         console.log(this)
-        $(".option").each(function (){
-            userChoice[this] = answerInput;
-            answerArray.push(answerInput);
-            console.log(answerInput)
-            
-            //$(this).val("data-id");
-            //console.log()
-            
-            //answerArray.push();
-            //console.log(answerArray);
-            //if(answerInput === correctAnswer) {
-                //answerscorrect++;
+        //$(".option").each(function (){
+            var xyz = $("input[class=option]:checked").val();
+            console.log(xyz);
+            var answerArray = [];
+  
+            $(".option").each(function() {
+                $(this).change(function() {
+                    
+                    if(this.checked) {
+                        answerArray.push($(this).attr("data-id"));
+                        console.log(answerArray)}
+                    });           
+                
+                    
+                
+                
+                
+                
+                });
 
-            //}
-            
-            //else {
-                //answersmissed++;
-            //}
 
 
+
+          
         
         });
 
         
-        //push.answerArray 
-    });
+      
+    };
     
-    $("#submitBtn").on("click", function(event) {
-        $("#quizbox").hide();
-       $("#answerscorrect").show();
-            //if()
-    });
-    
-    
+    $("#submitBtn").click(findCorrect);
 
-}
+        
+       
+        
+       
