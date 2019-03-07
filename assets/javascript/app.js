@@ -2,14 +2,13 @@ var answerscorrect = 0;
 var answersmissed = 0;
 var timer = 0;
 
-//const answerKey = {
-    //q1click: q1a2,
-    //q2click: q2a1,
-    //q3click: q3a1,
-    //q4click: q4a4
+const answerKey = {
+    q1click: "q1a2",
+    q2click: "q2a1",
+    q3click: "q3a4",
+    q4click: "q4a4"
 
-//}
-
+}
 
 
 
@@ -26,6 +25,7 @@ var timer = 0;
 function startGame () {
 
     var answerArray = [];
+
 
     var questions = {
 
@@ -60,7 +60,13 @@ function startGame () {
 
     var correctAnswers = ["q1a2", "q2a1", "q3a4", "q4a4"];
 
-
+    //const answerKey = {
+        //q1click: "q1a2",
+        //q2click: "q2a1",
+        //q3click: "q3a4",
+        //q4click: "q4a4"
+    
+    //}
    
 
 
@@ -87,10 +93,21 @@ function startGame () {
 
 function restartGame () {
 
-    $("#numCorrect").empty(answerscorrect)
-    $("#numMissed").empty(answersmissed)
+    answerscorrect = 0;
+    answersmissed = 0;
+    counter === 0;
+    answerArray = [""];
+    //$("#numCorrect").text("0");
+    //$("#numMissed").text("0");
     $("#answerscorrect").hide();
     $("#startgame").show();
+    var counter = 61;
+    var x = setInterval(function () {
+
+        counter = counter-1;
+        $('#timer').html(counter);
+
+    },1000);
 }
 
 
@@ -110,28 +127,45 @@ $(document).ready(function() {
     
             $(".option").each(function() {
 
+                //var answerscorrect = 0;
+
+                if ($(this).is(":checked") === true) {
+
+                    var q = $(this).attr("name")
+                    var ans = $(this).attr("data-id")
+
+                        if (ans == answerKey[q]) {
+                            answerscorrect++;
+                        }
+
+                        else {
+                            answersmissed++;
+                        }
+
+                }
+
                 ////////START HERE
                 
-                $(this).change(function() {
+                //$(this).change(function() {
                         
-                    if(this.checked) {
-                        answerArray.push($(this).attr("data-id"));
-                        console.log(answerArray)}
-                    });          
+                    //if(this.checked) {
+                        //answerArray.push($(this).attr("data-id"));
+                        //console.log(answerArray)}
+                    //});          
                     
-                    for(let i=0; i < answerArray.length, i++;) {
-                        for(let j=0; j < correctAnswers.length, j++;) {
-                            if(answerArray[i] === correctAnswers[j]) {
-                                answerscorrect++;
-                            }
+                    //for(let i=0; i < answerArray.length, i++;) {
+                        //for(let j=0; j < correctAnswers.length, j++;) {
+                            //if(answerArray[i] === correctAnswers[j]) {
+                                //answerscorrect++;
+                            //}
             
-                            else {
-                                answersmissed++;
-                            }
-                        }   
-                    }
+                            //else {
+                                //answersmissed++;
+                            //}
+                        //}   
+                    //}
                     
-                });
+                //});
             });
 
             
@@ -139,46 +173,21 @@ $(document).ready(function() {
         
         });
 
-        //const answer key {
-        //  q1click: q1a2
-        //}
-//if checked
-//var q = $(this).attr("name"),
-//var ans = $(this).attr("data-id")
-//if ( ans == answerKey [q])
-        //correct++
+       
     
-        
-    
-        
     $("#submitBtn").on("click", function (event) {
 
-    
-
-        //for(let i=0; i < answerArray.length, i++;) {
-            //for(let j=0; j < correctAnswers.length, j++;) {
-                //if(answerArray[i] === correctAnswers[j]) {
-                    //answerscorrect++;
-                //}
-
-                //else {
-                    //answersmissed++;
-                //}
-
-                
-                $("#quizbox").hide();
-    
-                $("#answerscorrect").show();
-
-                $("#numCorrect").text(answerscorrect);
-                $("#numMissed").text(answersmissed);
+            $("#quizbox").hide();
+            $("#answerscorrect").show();
+            $("#numCorrect").text(answerscorrect);
+            $("#numMissed").text(answersmissed);
                 
     
-            
+            //setTimeout(restartGame, 6000);
 
 
-            //}
+        
         
     });
-        
-        
+
+});
