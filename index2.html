@@ -13,6 +13,8 @@
     src="https://code.jquery.com/jquery-3.3.1.js"
     integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
     crossorigin="anonymous"></script>
+    <!--Moment.js-->
+   <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </head>
     
 
@@ -32,66 +34,84 @@
             <button id="startBtn">
                 <h2>Start</h2>
             </button>
-
         </div>
 
-        <div id="quizbox" style="display: none;">
+        <div class="counter">
+            <h2>Time Remaining:</h2>
+            <div class="countdown"></div>
+        </div>
 
-            <div class="counter">
-                    <h2>Time Remaining: </h2><div id="minsSeconds"><span id="timer"></span></div>
-            </div>
-            
-            <form id="quizForm">
-                <label for="borisKarloff" id="q1">In what year did Boris Karloff play The Mummy?</label><br>
+      
+            <div id="quizbox1" style="display: none;">
+                <label for="borisKarloff" id="q1">What year did Boris Karloff play The Mummy?</label><br><br>
                 <form action="">
                     <input type="radio" name="q1click" class="option" correctness="false" data-id="q1a1"> a) 1928
                     <input type="radio" name="q1click" class="option" correctness="true" data-id="q1a2"> b) 1932
                     <input type="radio" name="q1click" class="option" correctness="false" data-id="q1a3"> c) 1936 
                     <input type="radio" name="q1click" class="option" correctness="false" data-id="q1a4"> d) 1940
                 </form><br>
-
-                <label for="nosferatu" id="q2">What type of monster is Nosferatu?</label><br>
+                <input type="submit" id="submitBtn1" value="Submit" src="images/submit-buttonpng.png " width="200" height="100" alt="Submit">
+            </div>   
+       
+       
+         
+            <div id="quizbox2" style="display: none;">
+                <label for="nosferatu" id="q2">Nosferatu is what type of monster?</label><br><br>
                 <form action="">
                     <input type="radio" name="q2click" class="option" correctness="true" data-id="q2a1"> a) vampire
                     <input type="radio" name="q2click" class="option" correctness="false" data-id="q2a2"> b) zombie
-                    <input type="radio" name="q2click" class="option" correctness="false" data-id="q2a3"> c) ghost
+                    <input type="radio" name="q2click" class="option" correctness="false" data-id="q2a3"> c) ghost<br>
                     <input type="radio" name="q2click" class="option" correctness="false" data-id="q2a4"> d) somnabulist
                 </form><br>
-
-                <label for="dracula" id="q3">In 1931, which actor played Dracula?</label><br>
+                <input type="submit" id="submitBtn2" value="Submit" src="images/submit-buttonpng.png " width="200" height="100" alt="Submit">
+               
+            </div>
+      
+                
+     
+            <div id="quizbox3" style="display: none;">    
+                <label for="dracula" id="q3">In 1931, which actor played Dracula?</label><br><br>
                 <form action="">
                     <input type="radio" name="q3click" class="option" correctness="false" data-id="q3a1"> a) Lon Chaney Jr.
-                    <input type="radio" name="q3click" class="option" correctness="false" data-id="q3a2"> b) Vincent Price
+                    <input type="radio" name="q3click" class="option" correctness="false" data-id="q3a2"> b) Vincent Price<br>
                     <input type="radio" name="q3click" class="option" correctness="false" data-id="q3a3"> c) James Arness
                     <input type="radio" name="q3click" class="option" correctness="true" data-id="q3a4"> d) Bela Lugosi
                 </form><br>
-
-                <label for="brideof" id="q4">In "The Bride of Frakenstein," who played both the bride and Mary Shelley?</label><br>
+                <input type="submit" id="submitBtn3" value="Submit" src="images/submit-buttonpng.png " width="200" height="100" alt="Submit">
+              
+            </div>
+     
+                
+     
+            <div id="quizbox4" style="display: none;">       
+                <label for="brideof" id="q4">In "The Bride of Frakenstein," who played both the bride and Mary Shelley?</label><br><br>
                 <form action="">
                     <input type="radio" name="q4click" class="option" correctness="false" data-id="q4a1"> a) Mae Clarke
-                    <input type="radio" name="q4click" class="option" correctness="false" data-id="q4a2"> b) Margaret Sheridan
+                    <input type="radio" name="q4click" class="option" correctness="false" data-id="q4a2"> b) Margaret Sheridan<br>
                     <input type="radio" name="q4click" class="option" correctness="false" data-id="q4a3"> c) Julie Adams 
                     <input type="radio" name="q4click" class="option" correctness="true" data-id="q4a4"> d) Valerie Dobson
                 </form><br>
+                <input type="submit" id="submitBtn4" value="Submit" src="images/submit-buttonpng.png " width="200" height="100" alt="Submit">
+            </div>   
+           
 
-                <input type="submit" id="submitBtn" value="Submit" src="images/submit-buttonpng.png " width="200" height="100" alt="Submit">
-
-            </form>
-               
+        <div id="timeanswerscorrect" style="display: none;">
+            <h3>Time's Up!</h3><br>
+            <p>Answers Correct:</p><div id="numCorrect">0</div>
+            <p>Answers Missed:</p><div id="numMissed">0</div>
         </div>
 
         <div id="answerscorrect" style="display: none;">
-            <h3>Time's Up!</h3><br>
-            <p>Answers Correct:</p><div id="numCorrect">3</div>
-            <p>Answers Missed:</p><div id="numMissed">1</div>
-
+            <h3>Good Job!</h3><br>
+            <p>Answers Correct:</p><div id="numCorrect">0</div>
+            <p>Answers Missed:</p><div id="numMissed">0</div>
         </div>
 
 
 
     </div>
 
-<script type="text/javascript" src="assets/javascript/app.js">
+<script type="text/javascript" src="assets/javascript/apptest2.js">
 </script> 
     
 </body>

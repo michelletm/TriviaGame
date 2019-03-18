@@ -11,47 +11,36 @@ const answerKey = {
 }
 
 
-
-//$(document).ready(function() {
-
-    //$("#startBtn").click(startGame);
-    //console.log(this)
-
-    //set and start timer
-
-
-//});
-
 function startGame () {
 
     var answerArray = [];
 
 
-    var questions = {
+    // var questions = {
 
 
         
-        q1: {
-            answerChoices: ["q1a1", "q1a2", "q1a3", "q1a4"],
-            correctAnswer: "q1a2"
-        },
+    //     q1: {
+    //         answerChoices: ["q1a1", "q1a2", "q1a3", "q1a4"],
+    //         correctAnswer: "q1a2"
+    //     },
 
-        q2: {
-            answerChoices: ["q2a1", "q2a2", "q2a3", "q2a4"],
-            correctAnswer: "q2a1"
-        },
+    //     q2: {
+    //         answerChoices: ["q2a1", "q2a2", "q2a3", "q2a4"],
+    //         correctAnswer: "q2a1"
+    //     },
 
-        q3: {
-            answerChoices: ["q3a1", "q3a2", "q3a3", "q3a4"],
-            correctAnswer: "q3a4"
-        },
+    //     q3: {
+    //         answerChoices: ["q3a1", "q3a2", "q3a3", "q3a4"],
+    //         correctAnswer: "q3a4"
+    //     },
 
-        q4: {
-            answerChoices: ["q4a1", "q4a2", "q4a3", "q4a4"],
-            correctAnswer: "q4a4"
-        }
+    //     q4: {
+    //         answerChoices: ["q4a1", "q4a2", "q4a3", "q4a4"],
+    //         correctAnswer: "q4a4"
+    //     }
         
-    };
+    // };
 
     //var userChoice = [questions.q1.answerChoices[""], questions.q2.answerChoices[""], questions.q3.answerChoices[""], questions.q4.answerChoices[""]];
     
