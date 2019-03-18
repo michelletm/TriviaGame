@@ -2,28 +2,9 @@ body {
     background-image: url("../images/tallposter.jpg");
 }
 
-.counter {
+#quizbox {
     background-color: rgb(9, 184, 9);
     opacity: 0.75;
-    width: 900px;
-    height: 80px;
-    margin-left: auto;
-    margin-right: auto;
-    outline: 1.5px solid orangered;
-    border-bottom: none;
-    padding-left: 45px;
-    padding-right: 45px;
-    padding-top: 20px;
-    padding-bottom: 15px;
-    font-family: 'Sigmar One', cursive;
-    font-size: 55px;
-    text-align: center;
-    font-size: 27px;
-}
-
-#quizbox1, #quizbox2, #quizbox3, #quizbox4 {
-    background-color: rgb(9, 184, 9);
-    opacity: 0.8;
     width: 900px;
     margin-left: auto;
     margin-right: auto;
@@ -34,7 +15,7 @@ body {
     padding-bottom: 15px;
     font-family: 'Sigmar One', cursive;
     text-align: center;
-    font-size: 34px;
+    font-size: 27px;
     
 }
 
@@ -57,9 +38,9 @@ body {
 
 #startBtn {
     background-color: rgb(9, 184, 9);
-    border: none;
-    outline: none;
+    opacity: 0.9;
     font-size: 90px;
+    width: 100%;
     width: 400px;
     height: 150px;
     margin-left: auto;
@@ -70,7 +51,7 @@ body {
     text-align: center;
 }
 
-#answerscorrect, #timeanswerscorrect {
+#answerscorrect {
     background-color: rgb(9, 184, 9);
     opacity: 0.75;
     width: 900px;
@@ -94,7 +75,7 @@ body {
 
 .header {
     margin-top: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     
 }
 
@@ -102,7 +83,7 @@ body {
 #quiz-header {
     font-family: 'Sigmar One', cursive;
     text-align: center;
-    font-size: 66px;
+    font-size: 60px;
     color: rgb(238, 79, 16);
 }
 
@@ -116,9 +97,11 @@ body {
     margin-right: auto;
     margin-top: auto;
     margin-bottom: auto;
+    
+    
 }
 
-#submitBtn1, #submitBtn2, #submitBtn3, #submitBtn4  {
+#submitBtn {
     width: 150px;
     height: 80px;
     color: orangered;
@@ -137,7 +120,6 @@ p, #numCorrect, #numMissed {
     font-size: 45px;
     padding: 10px;
 }
-
 
 
 
